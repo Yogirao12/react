@@ -6,7 +6,7 @@ function Login() {
   return (
     <div className={styles.login}>
       <div className={styles.loginpic}>
-        <img src={logo} />
+        <img src={logo} alt="logo" />
         <div className={styles.tagline}>
           PostCloud helps you to connect and share memories with people.
         </div>

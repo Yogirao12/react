@@ -6,7 +6,7 @@ function Signup() {
   return (
     <div className={styles.signup}>
       <div className={styles.signuppic}>
-        <img src={illustration} />
+        <img src={illustration} alt="img" />
         <div className={styles.tagline}>
           A New World is rising. Let's discover it!
         </div>
