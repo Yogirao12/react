@@ -1,5 +1,5 @@
 import styles from "../style/login.module.css";
-import logo from "../images/postcloud-logo.png";
+import logo from "../images/newlogo.png";
 import { Link } from "react-router-dom";
 
 function Login() {

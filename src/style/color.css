@@ -1,11 +1,12 @@
 :root{
-    --primarycolor:#1092F3;
+    --primarycolor:#6710F3;
+    /* --primarycolor:#1092F3; */
+    --primaryhover:#4c03c1;
     --secondarycolor:blue;
     --tertiarycolor:yellow;
     --backgroundcolor:#F0F2F5;
     --whitecolor:white;
     --blackcolor:black;
-    --greycolor:grey;
-    --primaryhover:#057ad3;
-    --createaccount:#42B72A;
+    --greycolor:lightgrey;
+    --createaccount:#ae2ab7;
 }

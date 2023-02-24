@@ -18,7 +18,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New',
     monospace;
 }
 
@@ -47,4 +47,17 @@ code {
   to {
     -webkit-transform: rotate(360deg);
   }
+}
+
+button:disabled{
+  cursor: no-drop;
+}
+button:disabled:hover{
+  cursor: no-drop;
+}
+input:disabled{
+  cursor: no-drop;
+}
+input:disabled:hover{
+  cursor: no-drop;
 }
