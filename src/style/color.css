@@ -1,6 +1,11 @@
 :root{
-    --primarycolor:red;
+    --primarycolor:#1092F3;
     --secondarycolor:blue;
     --tertiarycolor:yellow;
     --backgroundcolor:#F0F2F5;
+    --whitecolor:white;
+    --blackcolor:black;
+    --greycolor:grey;
+    --primaryhover:#057ad3;
+    --createaccount:#42B72A;
 }

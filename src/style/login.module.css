@@ -1,18 +1,105 @@
 @import "color.css";
 .login{
     width: 100%;
+    max-width: 2000px;
     height:100vh;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--primarycolor);
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid black; */
 }
 .loginpic{
      width: 60%;
      height: 100%;
-     background-color: var(--secondarycolor);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+.loginpic img{
+    width: 70%;
+    height: auto;    
+}
+.tagline{
+    font-size: 1.5rem;
+    width: 70%;
+    text-align: justify;
+    font-weight: 500;
 }
 .logincontainer{
       width: 40%;
       height: 100%;
-      background-color: blueviolet;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* border: 1px solid black; */
+}
+.loginform{
+    background-color: var(--whitecolor);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+    height: auto;
+}
+
+.loginform input{
+    outline: none;
+    border: none;
+    border:  1px solid var(--greycolor);
+    width: 90%;
+    margin: auto;
+    padding: 10px 15px;
+    margin: 25px 0;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.loginform input:focus{
+    box-shadow: 0px 0px 4px var(--primarycolor);
+    border-color: var(--primarycolor);
+}
+.loginbtn{
+    outline: none;
+    border: none;
+    padding: 20px 5px;
+    background-color: var(--primarycolor);
+    color: var(--whitecolor);
+    font-weight: 500;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    margin: 25px 0;
+}
+.loginbtn:hover{
+    background-color: var(--primaryhover);
+    cursor: pointer;
+}
+.forgetlink{
+    color: var(--primarycolor);
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 20px 0;
+}
+
+.forgetlink:hover{
+    text-decoration: underline;
+}
+
+.createbtn{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 10px 25px;
+    width: 90%;
+    background-color: var(--createaccount);
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
 }
