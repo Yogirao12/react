@@ -2,11 +2,13 @@
     --primarycolor:#6710F3;
     /* --primarycolor:#1092F3; */
     --primaryhover:#4c03c1;
-    --secondarycolor:blue;
-    --tertiarycolor:yellow;
+    --secondarycolor:rgb(255, 0, 204);
+    --tertiarycolor:rgb(155, 202, 0);
     --backgroundcolor:#F0F2F5;
     --whitecolor:white;
     --blackcolor:black;
     --greycolor:lightgrey;
     --createaccount:#ae2ab7;
+    --grey:rgb(69, 68, 68);
+    --greytext:#808080;
 }

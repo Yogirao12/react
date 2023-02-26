@@ -1,0 +1,13 @@
+@import 'color.css';
+
+
+.homecontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.postcontainer{
+    width: 400px;
+}

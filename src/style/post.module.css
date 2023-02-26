@@ -1,0 +1,153 @@
+@import 'color.css';
+
+.post{
+    width:100%;
+    min-height: 500px;
+    background-color: var(--whitecolor);
+    margin: 25px 0;
+    padding: 5px 0;
+    border-radius: 10px;
+    box-shadow: 1px 0px 2px var(--grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post>div{
+    width: 100%;
+    margin: 10px 0;
+}
+.tagdiv{
+    color: var(--greytext);
+    font-size: .95rem;
+    padding-left: 10px;
+}
+
+.userinfo{
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    gap: 10px;
+    position: relative;
+}
+
+.userpic{
+    width: 40px;
+    height: 40px;
+}
+.userpic img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+.username{
+    display: flex;
+    flex-direction: column;
+}
+.posttime{
+    font-size: .8rem;
+    color: var(--greytext);
+}
+.threedot{
+    position: absolute;
+    right: 10px;
+}
+.dotbtn{
+    cursor: pointer;
+}
+
+.postmenu{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: yellowgreen;
+    top:70%;
+    right: 5%;
+    overflow: hidden;
+    transition: all 1s ease-in-out 0s;
+    border-radius: 10px;
+    background-color: var(--whitecolor);
+    padding: 10px;
+}
+
+.postmenu div{
+    margin: 15px 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    gap: 10px;
+}
+.postmenu div:hover{
+    background-color: var(--greycolor);
+}
+
+.caption{
+    font-size: .9rem;
+    padding: 0 10px;
+}
+.postimg img{
+    width: 100%;
+    height: auto;
+}
+
+.reactiondiv{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    color:  var(--greytext);
+    font-size: .9rem;
+}
+.likediv{
+    padding: 0 20px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mylike svg{
+    color: var(--secondarycolor);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.commentinput{
+    display: flex;
+    padding: 10px;
+}
+.inputuser{
+    width: 25px;
+    height: 25px;
+}
+.inputuser img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.input{
+    width: 90%;
+}
+.input input{
+    outline: none;
+    border: none;
+    background-color: var(--backgroundcolor);
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px;
+    margin-left: 5px;
+}
+.input span{
+    font-size: .6rem;
+    color: var(--greytext);
+    margin-left: 5%;
+}
+
+.allcomment{
+    color: var(--greytext);
+    font-size: .8rem;
+    padding: 0 12%;
+    cursor: pointer;
+}
+.allcomment:hover{
+    text-decoration: underline;
+}

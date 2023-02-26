@@ -64,16 +64,16 @@
     border-color: var(--primarycolor);
 }
 .loginbtn{
+    width: 90%;
+    margin: 25px 0;
     outline: none;
     border: none;
-    padding: 20px 5px;
-    background-color: var(--primarycolor);
+    padding: 20px 15px;
     color: var(--whitecolor);
     font-weight: 500;
     font-size: 1.5rem;
     border-radius: 8px;
-    width: 90%;
-    margin: 25px 0;
+    background-color: var(--primarycolor);
 }
 .loginbtn:hover{
     background-color: var(--primaryhover);
@@ -104,3 +104,54 @@
     color: white;
     border-radius: 5px;
 }
+
+@media screen and (max-width:900px) {
+    .login{
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+    .loginpic{
+        height: auto;
+        margin: 20px 0;
+    }
+    .tagline{
+        width: 100%;
+        display: none;
+    }
+    .logincontainer{
+        height: auto;
+        width: 80%;
+        margin: 10px;
+    }
+    .loginform{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .logincontainer{
+        width: 95%;
+    }
+    .loginpic{
+        width: 80%;
+        
+    }
+}
+@media screen and (max-width:300px) {
+    body{
+        background-color: var(--whitecolor);
+    }
+    .logincontainer{
+        width: 100%;
+        margin: 0%;
+    }
+    .loginform{
+        width: 100%;
+    }
+    .loginpic{
+        width: 80%;
+    }
+}
+

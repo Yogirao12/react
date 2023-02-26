@@ -1,0 +1,179 @@
+@import 'color.css';
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color:var(--whitecolor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logodiv{
+    width: 25%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logodiv img{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    max-height: 100%;
+}
+.searchdiv{
+    width: 35%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    width: 90%;
+    height: 45%;
+    padding: 0 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background-color: var(--backgroundcolor);
+    position: relative;
+}
+ svg{
+    color: var(--grey);
+}
+.search input{
+    outline: none;
+    margin-left: 5%;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    width: 90%;
+}
+
+.iconsdiv{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.iconsdiv svg{
+    font-size: 1.3rem;
+}
+.iconsdiv a{
+    text-decoration: none;
+}
+.iconsdiv img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width:700px) {
+    .logodiv{
+        width: 50%;
+    }
+    .bar{
+        display: none;
+    }
+    .baricon{
+        width: 50%;
+        padding: 0 20px;
+        text-align: end;
+    }
+    .barlabel{
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+    .navlink{
+        width: 100%;
+        min-height: 100vh;
+        top: 0;
+        position: absolute;
+        z-index: 100;
+        background-color: var(--whitecolor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .navlink .cancel{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .navbar .logodiv{
+        height: 100px;
+    }
+    .navlink .searchdiv{
+        height: 80px;
+        width: 90%;
+    }
+    .navlink .profilepic{
+        width: 100%;
+        height: 100px;
+        padding: 0 2%;
+    }
+    .profilepic a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .navlink .profilepic img{
+        width: 80px;
+        height:80px;
+        border-radius: 50%;
+    }
+    .navlink .morelink{
+        width: 100%;
+        height: 80px;
+        font-size: 1.5rem;
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+     .navlink .morepages{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .morepages .pages{
+        width: 95%;
+        height: 50px;
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+    .pages svg{
+        font-size: 2rem;
+        margin: 0 10px;
+    }
+    .pages a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .pages:hover{
+        background-color: var(--greycolor);
+        border-radius: 10px;
+    }
+    svg.friend{
+        color: var(--primarycolor);
+    }
+    svg.group{
+        color: var(--secondarycolor);
+    } 
+    svg.postpage{
+        color: var(--createaccount);
+    }
+    svg.saved{
+        color: var(--tertiarycolor);
+    }
+}
