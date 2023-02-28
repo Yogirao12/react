@@ -3,6 +3,7 @@ import illustration from "../images/illustration.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { signup } from "../api";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [name, setname] = useState("");
@@ -10,12 +11,14 @@ function Signup() {
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
   const [isSignup, setsignup] = useState(false);
+  const redirect=useNavigate();
   const handleclick = async function (e) {
     e.preventDefault();
     setsignup(true);
     const res = await signup(name, email, password, cpassword);
     setsignup(false);
     console.log("res:", res);
+    redirect("/login");
   };
   return (
     <div className={styles.signup}>

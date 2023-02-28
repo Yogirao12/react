@@ -17,11 +17,20 @@ import profilepic from "../images/profile.jpg";
 import { Link } from "react-router-dom";
 import { useResize } from "../hooks";
 import { useEffect, useState } from "react";
-
+import { removedata } from "../utils/localstorage";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/usersession";
 function Navbar() {
   const [width, height] = useResize();
   const [check, setcheck] = useState(false);
+  const redirect=useNavigate();
+  const userinfo=useAuth();
+  const handlelogout=(e)=> {
+    e.preventDefault();
+    userinfo.logout();
+    redirect("/login")
 
+  }
   const handleCheck = (e) => {
     if (e.target.checked) {
       setcheck(true);
@@ -99,7 +108,7 @@ function Navbar() {
               </Link>
             </div>
             <div>
-              <Link to={"/login"}>
+              <Link onClick={handlelogout}>
                 <AiOutlineLogout />
               </Link>
             </div>
