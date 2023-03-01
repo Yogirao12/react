@@ -10,6 +10,7 @@ export function useProvide() {
   const [user, setuser] = useState(null);
   const [loading, setloading] = useState(true);
   const [userChange, setuserChange] = useState(false);
+  const [ready, setready] = useState(true);
   useEffect(() => {
     setloading(true);
     const token = getdata();
@@ -18,6 +19,7 @@ export function useProvide() {
       setuser(user);
     }
     setloading(false);
+    setready(true);
   }, [userChange]);
   /**********************SIGNUP FUNCTION************* */
   const signup = async function (name, email, password, cpassword) {
@@ -34,6 +36,7 @@ export function useProvide() {
 
   /********************* LOGIN UP ****************/
   const login = async function (email, password) {
+    setready(false);
     const res = await customfetch(API_URL.login(), {
       method: "POST",
       body: {
@@ -42,7 +45,10 @@ export function useProvide() {
       },
     });
     userChange ? setuserChange(false) : setuserChange(true);
-    return res;
+    if(ready){
+      return res;
+    }
+    
   };
   /*****************    LOGOUT FUNCTION     *****************/
   const logout = async function (email, password) {

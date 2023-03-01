@@ -86,7 +86,7 @@ function Navbar() {
           <div className={styles.profilepic}>
             <Link to={"/profile"}>
               <img src={profilepic} alt="img" />
-              Alex
+              {userinfo.user? userinfo.user.name:"unknown"}
             </Link>
           </div>
           <div className={styles.morelink}>

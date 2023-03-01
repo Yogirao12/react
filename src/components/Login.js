@@ -19,14 +19,18 @@ function Login() {
     e.preventDefault();
     try {
       const res = await userInfo.login(email, password);
-      console.log(res);
+      //console.log(res);
       if (res.data.success) {
-        savedata(res.data.data.token);
+        await savedata(res.data.data.token);
+        if(userInfo.user!=null){
+          redirect("/");
+        }
       } else {
         return console.log(res.data.message);
       }
       setloading(false);
-      redirect("/");
+
+      
     } catch (e) {
       console.log(e);
       return console.log(e);
