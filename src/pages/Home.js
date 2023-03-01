@@ -1,12 +1,12 @@
-import { Navbar, Loader, Post } from "../components";
+import { Navbar, Post } from "../components";
 import styles from "../style/home.module.css";
 import post1 from "../images/profile.jpg";
 import post2 from "../images/post.jpg";
 import { useAuth } from "../hooks/usersession";
 
 function Home() {
-  let userinfo=useAuth();
-  console.log("kk is gand",userinfo);
+  let userinfo = useAuth();
+  console.log("login userInfo:", userinfo);
   return (
     <>
       <Navbar />

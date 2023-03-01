@@ -88,6 +88,10 @@
     text-decoration: underline;
 }
 
+.loginlink{
+    text-decoration: underline;
+    color: var(--primarycolor);
+}
     
 
 @media screen and (max-width:900px) {

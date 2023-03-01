@@ -1,11 +1,17 @@
 import Loginpage from "../pages/Login";
 import SignupPage from "../pages/Siginup";
 import Profilepage from "../pages/profile";
+import Loader from "./Loader";
+import { useAuth } from "../hooks/usersession";
 
 import { Route, Routes } from "react-router-dom";
 import Homepage from "../pages/Home.js";
 
 function App() {
+  const userInfo = useAuth();
+  if (userInfo.loading) {
+    return <Loader />;
+  }
   return (
     <div className="App">
       <Routes>

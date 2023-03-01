@@ -11,7 +11,7 @@ function Signup() {
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
   const [isSignup, setsignup] = useState(false);
-  const redirect=useNavigate();
+  const redirect = useNavigate();
   const handleclick = async function (e) {
     e.preventDefault();
     setsignup(true);
@@ -61,10 +61,12 @@ function Signup() {
           >
             {isSignup ? "Loading..." : "Create Your Account"}
           </button>
-          Already have account?
-          <Link to={"/login"} className={styles.loginlink}>
-            Log in
-          </Link>
+          <div>
+            Already have account?{" "}
+            <Link to={"/login"} className={styles.loginlink}>
+              Log in
+            </Link>
+          </div>
         </form>
       </div>
     </div>

@@ -3,7 +3,7 @@ import {
   FaTag,
   FaEllipsisV,
   FaHeart,
-  FaRegHeart,
+  // FaRegHeart,
   FaUserCheck,
   FaBookmark,
   FaRegEyeSlash,
@@ -11,7 +11,7 @@ import {
   FaExclamation,
 } from "react-icons/fa";
 import profile from "../images/profile.jpg";
-import post from "../images/post.jpg";
+// import post from "../images/post.jpg";
 import { Link } from "react-router-dom";
 import { Comment } from "./";
 import { useState } from "react";

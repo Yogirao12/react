@@ -16,21 +16,19 @@ import logo from "../images/newlogo.png";
 import profilepic from "../images/profile.jpg";
 import { Link } from "react-router-dom";
 import { useResize } from "../hooks";
-import { useEffect, useState } from "react";
-import { removedata } from "../utils/localstorage";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/usersession";
 function Navbar() {
   const [width, height] = useResize();
   const [check, setcheck] = useState(false);
-  const redirect=useNavigate();
-  const userinfo=useAuth();
-  const handlelogout=(e)=> {
+  const redirect = useNavigate();
+  const userinfo = useAuth();
+  const handlelogout = (e) => {
     e.preventDefault();
     userinfo.logout();
-    redirect("/login")
-
-  }
+    redirect("/login");
+  };
   const handleCheck = (e) => {
     if (e.target.checked) {
       setcheck(true);
@@ -39,7 +37,7 @@ function Navbar() {
     }
   };
 
-  if (width < 700) {
+  if (width < 700 && height > 0) {
     let mystyle = {};
     if (check) {
       mystyle = {
@@ -87,7 +85,7 @@ function Navbar() {
           </div>
           <div className={styles.profilepic}>
             <Link to={"/profile"}>
-              <img src={profilepic} />
+              <img src={profilepic} alt="img" />
               Alex
             </Link>
           </div>
@@ -169,7 +167,7 @@ function Navbar() {
           <div>
             <Link to={"/profile"}>
               <img src={profilepic} alt="profilepic" />
-              Alex
+              {userinfo.user ? userinfo.user.name : "unknown"}
             </Link>
           </div>
           <div>
@@ -183,7 +181,7 @@ function Navbar() {
             </Link>
           </div>
           <div>
-            <Link to={"/login"}>
+            <Link to={"/login"} onClick={handlelogout}>
               <AiOutlineLogout />
             </Link>
           </div>
