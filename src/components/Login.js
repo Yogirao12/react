@@ -12,25 +12,18 @@ function Login() {
   const [password, setpassword] = useState("");
   const [loading, setloading] = useState(false);
   const userInfo = useAuth();
-  console.log("userInfo:", userInfo);
   const redirect = useNavigate();
   const handleclick = async function (e) {
     setloading(true);
     e.preventDefault();
     try {
       const res = await userInfo.login(email, password);
-      //console.log(res);
       if (res.data.success) {
-        await savedata(res.data.data.token);
-        if(userInfo.user!=null){
-          redirect("/");
-        }
+        redirect("/");
       } else {
         return console.log(res.data.message);
       }
       setloading(false);
-
-      
     } catch (e) {
       console.log(e);
       return console.log(e);

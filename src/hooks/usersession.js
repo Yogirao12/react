@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useEffect } from "react";
-import { getdata, removedata } from "../utils/localstorage";
+import { getdata, removedata, savedata } from "../utils/localstorage";
 import jwtDecode from "jwt-decode";
 import { API_URL } from "../utils/constant";
 import { customfetch } from "../api";
@@ -9,18 +9,21 @@ import { Authcontext } from "../provider/authprovider";
 export function useProvide() {
   const [user, setuser] = useState(null);
   const [loading, setloading] = useState(true);
-  const [userChange, setuserChange] = useState(false);
-  const [ready, setready] = useState(true);
+  // const [userChange, setuserChange] = useState(false);
+  // const [ready, setready] = useState(true);
   useEffect(() => {
-    setloading(true);
-    const token = getdata();
-    if (token) {
-      let user = jwtDecode(token);
-      setuser(user);
+    async function getuser() {
+      setloading(true);
+      const token = getdata();
+      if (token) {
+        let user = await jwtDecode(token);
+        setuser(user);
+      }
+      setloading(false);
+      return true;
     }
-    setloading(false);
-    setready(true);
-  }, [userChange]);
+    getuser();
+  }, []);
   /**********************SIGNUP FUNCTION************* */
   const signup = async function (name, email, password, cpassword) {
     return customfetch(API_URL.signup(), {
@@ -36,7 +39,6 @@ export function useProvide() {
 
   /********************* LOGIN UP ****************/
   const login = async function (email, password) {
-    setready(false);
     const res = await customfetch(API_URL.login(), {
       method: "POST",
       body: {
@@ -44,11 +46,11 @@ export function useProvide() {
         password,
       },
     });
-    userChange ? setuserChange(false) : setuserChange(true);
-    if(ready){
-      return res;
-    }
-    
+    savedata(res.data.data.token);
+    let loginuser = await jwtDecode(res.data.data.token);
+    console.log(loginuser);
+    setuser(loginuser);
+    return res;
   };
   /*****************    LOGOUT FUNCTION     *****************/
   const logout = async function (email, password) {
